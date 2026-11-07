@@ -1,3 +1,4 @@
+
 # Quantumult X 脚本与远程重写
 
 按应用分类的自用 Quantumult X 脚本及远程重写，持续更新。
@@ -6,32 +7,41 @@
 
 ### 虎扑去广告（测试版）
 
-订阅链接：
-
 ```text
 https://raw.githubusercontent.com/akaagiao1/quantumult-x-scripts/main/hupu/hupu-ad.conf
 ```
 
-#### 添加方法
+针对抓包中虎扑 8.2.67 的两个广告接口。所需 hostname：`goblin.hupu.com`。
 
-1. 复制上面的链接，在 Quantumult X 的重写资源（远程重写）中添加并启用。
-2. 更新该重写资源，确认资源加载成功；配置已包含所需 hostname：`goblin.hupu.com`。
-3. 在 Quantumult X 中启用重写和 MITM，安装并信任 MITM 证书。
-4. 退出并重新打开虎扑进行测试。如之前添加了同一规则的本地版本，请关闭或删除，避免重复。
+### 哔哩哔哩开屏去广告（测试版）
 
-本规则根据抓包适配虎扑 8.2.67 的两个广告接口，仅在响应结构符合预期时清空广告数组；其他情况原样放行。可能存在广告位留白、广告未覆盖或版本更新后失效的情况。
+```text
+https://raw.githubusercontent.com/akaagiao1/quantumult-x-scripts/main/bilibili/splash.conf
+```
+
+处理抓包中开屏 list 和 show 接口，清空相关素材及展示列表，包括将来可能出现的非广告开屏素材。品牌开屏等其他接口未覆盖。所需 hostname：`app.bilibili.com`。
+
+### 添加方法
+
+1. 复制所需链接，在 Quantumult X 的重写资源（远程重写）中添加并启用。
+2. 更新资源，确认加载成功；各资源已包含所需 hostname。
+3. 启用重写和 MITM，安装并信任 Quantumult X MITM 证书。
+4. 退出并重新打开对应 App 测试。如之前添加了相同本地规则，建议关闭或删除，避免重复。
 
 ## 目录结构
 
 ```text
 quantumult-x-scripts/
 ├── README.md
-└── hupu/
-    ├── hupu-ad.conf       # 虎扑远程重写订阅
-    └── hupu-ad-test.js    # 虎扑测试脚本
+├── hupu/
+│   ├── hupu-ad.conf       # 虎扑远程重写
+│   └── hupu-ad-test.js    # 虎扑测试脚本
+└── bilibili/
+    ├── splash.conf        # B站开屏远程重写
+    └── splash.js          # B站开屏脚本
 ```
 
-后续其他应用的脚本和重写会按应用分别存放。
+规则为测试版，可能出现留白、未覆盖或版本更新失效；异常响应原样放行。
 
 ## 隐私提醒
 
