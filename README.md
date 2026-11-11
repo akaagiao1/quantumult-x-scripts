@@ -11,7 +11,7 @@
 https://raw.githubusercontent.com/akaagiao1/quantumult-x-scripts/main/hupu/hupu-ad.conf
 ```
 
-MITM 域名：`goblin.hupu.com`。
+MITM 域名：`goblin.hupu.com`。支持 8.2.67 和 8.2.68 的 `getOther/v3`、`getOther/batch` 接口；仅清空符合预期结构的广告列表，其他响应原样放行。新版本或其他广告接口可能未覆盖。
 
 ### 哔哩哔哩开屏去广告（测试版）
 
